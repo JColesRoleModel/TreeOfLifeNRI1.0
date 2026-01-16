@@ -1,48 +1,56 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Tree of Life · Upper Body Innervation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Use the same font family as the rest of the app -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <!-- Shared stylesheet for consistent design -->
   <link rel="stylesheet" href="css/legs_style.css">
+  <link rel="stylesheet" href="css/footer-nav.css">
+  <link rel="stylesheet" href="css/completion-modal.css">
   <!-- Favicon for the site icon -->
   <link rel="icon" type="image/png" href="assets/logo/tolnrilogo.png">
 </head>
+
 <body>
   <div class="app-frame">
     <header class="brand-header">
-  <div class="brand-mark">
-    <!-- LEFT SIDE: logo + presented by -->
-    <div class="brand-left">
-      <a href="index.html" class="brand-logo-link">
-        <img
-          src="assets/logo/tolnrilogo.png"
-          alt="Tree of Life logo"
-          class="brand-logo-image"
-        >
-      </a>
-      <div class="brand-presenter">
-        <span class="presented-label">presented by:</span>
-        <span class="presented-name">Brian O'Kelly</span>
+      <div class="brand-mark">
+        <div class="brand-presenter-block">
+          <div class="presented-label">presented by:</div>
+          <div class="presented-name">Brian O'Kelly</div>
+        </div>
+        <a href="index.html" class="brand-logo-link">
+          <img src="assets/logo/tolnrilogo.png" alt="Tree of Life logo" class="brand-logo-image">
+        </a>
+        <div class="brand-text">
+          <div class="brand-title">TREE OF LIFE</div>
+          <div class="brand-subtitle">Neurological Research Institute</div>
+        </div>
+        <div class="header-actions">
+          <div class="menu-dropdown">
+            <button class="menu-button" type="button" aria-label="Menu">☰</button>
+            <div class="menu-panel">
+              <a href="index.html">🏠 Home</a>
+              <a href="random.html">🔀 Random</a>
+              <a href="eyes.html">👁️ Eyes</a>
+              <a href="breathwork.html">🫁 Breathwork</a>
+              <a href="lower.html">🦶 Lower Body</a>
+              <a href="upper.html">💪 Upper Body</a>
+              <a href="head.html">🧠 Head</a>
+              <a href="mudras.html">🤲 Mudras</a>
+              <button type="button" data-menu-stats>📊 Stats</button>
+              <a href="mailto:TreeOfLifeNRI@yahoo.com">📱 Contact</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <!-- RIGHT SIDE: title + subtitle -->
-    <div class="brand-text">
-      <div class="brand-title">TREE OF LIFE</div>
-      <div class="brand-subtitle">Neurological Research Institute</div>
-    </div>
-
-    <!-- MENU ICON -->
-    <a href="index.html" class="home-link" title="Menu">
-      <img src="assets/neuroocular/icons/menuicon.png" alt="Menu" class="menu-icon">
-    </a>
-  </div>
-</header>
-    
     <main class="app-main">
       <!-- SCREEN 1: ROUTINE PICKER -->
       <section id="screen-select" class="screen screen-active">
@@ -132,41 +140,30 @@
           <button id="btn-play-pause" class="btn primary-btn">Start</button>
           <button id="btn-restart" class="btn ghost-btn">Restart Routine</button>
         </div>
-        
+
         <div id="status-message" class="status-message"></div>
       </section>
     </main>
-    <footer class="page-footer">
-      <div class="footer-actions">
-        <button type="button" class="back-to-top-btn">Return to Top</button>
-        <div class="social-links">
-          <a class="social-link" href="#">
-            <img src="assets/pinterest.svg" alt="Pinterest">
-          </a>
-          <a class="social-link" href="#">
-            <img src="assets/youtube.svg" alt="YouTube">
-          </a>
-          <a class="social-link" href="#">
-            <img src="assets/instagram.svg" alt="Instagram">
-          </a>
-          <a class="social-link" href="#">
-            <img src="assets/tiktok.svg" alt="TikTok">
-          </a>
-        </div>
-      </div>
-      <div class="footer-credit">
-        put together by:<br>
-        Brian O'Kelly<br>
-        Tree of Life: Neurological Research Institute<br>
-        <a href="mailto:treeoflifenri@yahoo.com">treeoflifenri@yahoo.com</a>
-      </div>
+
+    <footer class="app-footer">
+      <nav class="footer-nav">
+        <a href="random.html">🔀 Random</a>
+        <a href="#" id="footer-stats">📊 Stats</a>
+        <a href="index.html">☰ Home</a>
+      </nav>
     </footer>
   </div>
-  <!-- Audio placeholder: beep for timing and ding for end-of-phase -->
+
   <audio id="audio-beep" preload="auto"></audio>
   <audio id="audio-ding" src="assets/audio/ding.mp3" preload="auto"></audio>
-  <script src="js/common.js" defer></script>
+
+  <script src="js/time-tracker.js"></script>
+  <script src="js/time-stats-ui.js"></script>
+  <script src="js/lazy-loader.js"></script>
+  <script src="js/menu.js"></script>
   <!-- Include the upper body logic script -->
   <script src="js/upper_app.js" defer></script>
+  <script src="js/completion-prompt.js"></script>
 </body>
+
 </html>

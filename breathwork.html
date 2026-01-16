@@ -1,49 +1,57 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Tree of Life · Breathwork Toolkit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Shared font + base styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/legs_style.css">
+  <link rel="stylesheet" href="css/footer-nav.css">
+  <link rel="stylesheet" href="css/completion-modal.css">
   <!-- Breathwork-specific styles -->
   <link rel="stylesheet" href="css/breathwork.css">
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/logo/tolnrilogo.png">
 </head>
+
 <body>
   <div class="app-frame">
     <!-- Shared brand header -->
     <header class="brand-header">
-  <div class="brand-mark">
-    <!-- LEFT SIDE: logo + presented by -->
-    <div class="brand-left">
-      <a href="index.html" class="brand-logo-link">
-        <img
-          src="assets/logo/tolnrilogo.png"
-          alt="Tree of Life logo"
-          class="brand-logo-image"
-        >
-      </a>
-      <div class="brand-presenter">
-        <span class="presented-label">presented by:</span>
-        <span class="presented-name">Brian O'Kelly</span>
+      <div class="brand-mark">
+        <div class="brand-presenter-block">
+          <div class="presented-label">presented by:</div>
+          <div class="presented-name">Brian O'Kelly</div>
+        </div>
+        <a href="index.html" class="brand-logo-link">
+          <img src="assets/logo/tolnrilogo.png" alt="Tree of Life logo" class="brand-logo-image">
+        </a>
+        <div class="brand-text">
+          <div class="brand-title">TREE OF LIFE</div>
+          <div class="brand-subtitle">Neurological Research Institute</div>
+        </div>
+        <div class="header-actions">
+          <div class="menu-dropdown">
+            <button class="menu-button" type="button" aria-label="Menu">☰</button>
+            <div class="menu-panel">
+              <a href="index.html">🏠 Home</a>
+              <a href="random.html">🔀 Random</a>
+              <a href="eyes.html">👁️ Eyes</a>
+              <a href="breathwork.html">🫁 Breathwork</a>
+              <a href="lower.html">🦶 Lower Body</a>
+              <a href="upper.html">💪 Upper Body</a>
+              <a href="head.html">🧠 Head</a>
+              <a href="mudras.html">🤲 Mudras</a>
+              <button type="button" data-menu-stats>📊 Stats</button>
+              <a href="mailto:TreeOfLifeNRI@yahoo.com">📱 Contact</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- RIGHT SIDE: title + subtitle -->
-    <div class="brand-text">
-      <div class="brand-title">TREE OF LIFE</div>
-      <div class="brand-subtitle">Neurological Research Institute</div>
-    </div>
-
-    <!-- MENU ICON -->
-    <a href="index.html" class="home-link" title="Menu">
-      <img src="assets/neuroocular/icons/menuicon.png" alt="Menu" class="menu-icon">
-    </a>
-  </div>
-</header>
+    </header>
 
     <main class="app-main breath-app">
       <section class="screen screen-active">
@@ -287,8 +295,21 @@
         </div>
       </section>
     </main>
+
+    <footer class="app-footer">
+      <nav class="footer-nav">
+        <a href="random.html">🔀 Random</a>
+        <a href="#" id="footer-stats">📊 Stats</a>
+        <a href="index.html">☰ Home</a>
+      </nav>
+    </footer>
   </div>
 
+  <script src="js/time-tracker.js"></script>
+  <script src="js/time-stats-ui.js"></script>
+  <script src="js/menu.js"></script>
   <script src="js/breathwork.js"></script>
+  <script src="js/completion-prompt.js"></script>
 </body>
+
 </html>

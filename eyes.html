@@ -1,12 +1,16 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Tree of Life · Neuro‑Ocular Activation</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Use the same font and base stylesheet as other pages -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="css/legs_style.css">
+  <link rel="stylesheet" href="css/footer-nav.css">
+  <link rel="stylesheet" href="css/completion-modal.css">
   <!-- Favicon for site icon -->
   <link rel="icon" type="image/png" href="assets/logo/tolnrilogo.png">
   <!-- Inline ocular‑specific styles -->
@@ -14,13 +18,14 @@
     /* Apply a custom background for the ocular page */
     .ocular-background {
       /* Use the eyes pattern overlaid by a cosmic indigo tint for depth and legibility */
-      background-image: 
+      background-image:
         linear-gradient(rgba(29, 26, 58, 0.3), rgba(29, 26, 58, 0.3)),
         url('assets/neuroocular/eyesbackground.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
     }
+
     /* Info section with table and explanations */
     .info-section {
       /* Hide the information section on the eyes page. We still retain it in the
@@ -28,6 +33,7 @@
          resembles the lower body routine page. */
       display: none;
     }
+
     .info-section h2 {
       margin: 0 0 10px;
       font-size: 1.0rem;
@@ -35,6 +41,7 @@
       text-transform: uppercase;
       color: var(--cream);
     }
+
     .info-section h3 {
       margin-top: 16px;
       margin-bottom: 8px;
@@ -43,45 +50,53 @@
       text-transform: uppercase;
       color: var(--cream);
     }
+
     .info-section p {
       margin: 0 0 10px;
       font-size: 0.78rem;
       line-height: 1.4;
-      color: rgba(245,230,205,0.9);
+      color: rgba(245, 230, 205, 0.9);
     }
+
     .info-section ul {
       padding-left: 18px;
       margin: 6px 0 12px;
       font-size: 0.78rem;
       line-height: 1.4;
-      color: rgba(245,230,205,0.92);
+      color: rgba(245, 230, 205, 0.92);
     }
+
     .info-section ul li {
       margin-bottom: 6px;
     }
+
     /* Table styling */
     .ocular-table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 10px;
       font-size: 0.68rem;
-      color: rgba(245,230,205,0.92);
+      color: rgba(245, 230, 205, 0.92);
     }
+
     .ocular-table thead th {
       padding: 6px 6px;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       font-size: 0.65rem;
-      background: rgba(76,154,197,0.18);
+      background: rgba(76, 154, 197, 0.18);
     }
+
     .ocular-table tbody td {
       padding: 6px 6px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
       vertical-align: top;
     }
+
     .ocular-table tbody tr:nth-child(odd) {
-      background: rgba(255,255,255,0.03);
+      background: rgba(255, 255, 255, 0.03);
     }
+
     .ocular-table .pos {
       font-weight: 600;
       color: var(--gold);
@@ -92,12 +107,13 @@
     .info-details {
       margin-top: 18px;
       background: rgba(29, 26, 58, 0.5);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-md);
       padding: 12px 14px;
       color: var(--cream);
       backdrop-filter: blur(6px);
     }
+
     .info-details summary {
       font-size: 0.85rem;
       text-transform: uppercase;
@@ -106,53 +122,61 @@
       list-style: none;
       outline: none;
     }
+
     .info-details summary::-webkit-details-marker {
       display: none;
     }
+
     .info-details summary::after {
       content: '▾';
       float: right;
       transition: transform 0.2s ease;
     }
+
     .info-details[open] summary::after {
       transform: rotate(180deg);
     }
+
     .info-details div {
       margin-top: 12px;
     }
   </style>
 </head>
+
 <body>
   <div class="app-frame">
     <header class="brand-header">
-  <div class="brand-mark">
-    <!-- LEFT SIDE: logo + presented by -->
-    <div class="brand-left">
-      <a href="index.html" class="brand-logo-link">
-        <img
-          src="assets/logo/tolnrilogo.png"
-          alt="Tree of Life logo"
-          class="brand-logo-image"
-        >
-      </a>
-      <div class="brand-presenter">
-        <span class="presented-label">presented by:</span>
-        <span class="presented-name">Brian O'Kelly</span>
+      <div class="brand-mark">
+        <div class="brand-presenter-block">
+          <div class="presented-label">presented by:</div>
+          <div class="presented-name">Brian O'Kelly</div>
+        </div>
+        <a href="index.html" class="brand-logo-link">
+          <img src="assets/logo/tolnrilogo.png" alt="Tree of Life logo" class="brand-logo-image">
+        </a>
+        <div class="brand-text">
+          <div class="brand-title">TREE OF LIFE</div>
+          <div class="brand-subtitle">Neurological Research Institute</div>
+        </div>
+        <div class="header-actions">
+          <div class="menu-dropdown">
+            <button class="menu-button" type="button" aria-label="Menu">☰</button>
+            <div class="menu-panel">
+              <a href="index.html">🏠 Home</a>
+              <a href="random.html">🔀 Random</a>
+              <a href="eyes.html">👁️ Eyes</a>
+              <a href="breathwork.html">🫁 Breathwork</a>
+              <a href="lower.html">🦶 Lower Body</a>
+              <a href="upper.html">💪 Upper Body</a>
+              <a href="head.html">🧠 Head</a>
+              <a href="mudras.html">🤲 Mudras</a>
+              <button type="button" data-menu-stats>📊 Stats</button>
+              <a href="mailto:TreeOfLifeNRI@yahoo.com">📱 Contact</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-
-    <!-- RIGHT SIDE: title + subtitle -->
-    <div class="brand-text">
-      <div class="brand-title">TREE OF LIFE</div>
-      <div class="brand-subtitle">Neurological Research Institute</div>
-    </div>
-
-    <!-- MENU ICON -->
-    <a href="index.html" class="home-link" title="Menu">
-      <img src="assets/neuroocular/icons/menuicon.png" alt="Menu" class="menu-icon">
-    </a>
-  </div>
-</header>
+    </header>
 
     <main class="app-main ocular-background">
       <!-- SCREEN 1: Routine picker for ocular sequences -->
@@ -192,14 +216,14 @@
             <label for="input-rounds">Rounds of sequence</label>
             <input id="input-rounds" type="number" min="1" max="10" step="1" value="2">
           </div>
-        <div class="field">
-          <label>Sound</label>
-          <!-- Toggle to enable/disable the end‑of‑phase sound -->
-          <button id="ocular-audio-toggle" class="pill-toggle" data-on="1">
-            <span class="pill-knob"></span>
-            <span class="pill-label">On</span>
-          </button>
-        </div>
+          <div class="field">
+            <label>Sound</label>
+            <!-- Toggle to enable/disable the end‑of‑phase sound -->
+            <button id="ocular-audio-toggle" class="pill-toggle" data-on="1">
+              <span class="pill-knob"></span>
+              <span class="pill-label">On</span>
+            </button>
+          </div>
         </div>
         <button id="btn-start-routine" class="btn primary-btn full-width">Start Sequence</button>
       </section>
@@ -244,7 +268,8 @@
     <details class="info-details">
       <summary>Learn more about gaze science &amp; flows 📚</summary>
       <div>
-        <p>The nine gaze positions engage distinct cranial nerves, cervical muscles and autonomic pathways. Use the table below to understand the neural signatures.</p>
+        <p>The nine gaze positions engage distinct cranial nerves, cervical muscles and autonomic pathways. Use the
+          table below to understand the neural signatures.</p>
         <table class="ocular-table">
           <thead>
             <tr>
@@ -376,7 +401,8 @@
           <li>Done—instant lift!</li>
         </ul>
         <h2>Grounding, Balance &amp; Harmony 🌿</h2>
-        <p>Enter a relaxed, coherent state—parasympathetic dominance without sedation.  These flows cultivate vagal tone and hemispheric balance.</p>
+        <p>Enter a relaxed, coherent state—parasympathetic dominance without sedation. These flows cultivate vagal tone
+          and hemispheric balance.</p>
         <h3>The Equilibrium Pattern 🌊</h3>
         <ul>
           <li>Downward diagonal left hold (20–30 sec)</li>
@@ -399,7 +425,8 @@
           <li>Slow horizontal tracking (2 passes)</li>
         </ul>
         <h2>Restoring &amp; Letting Go 🌑</h2>
-        <p>For deep restoration, limbic unloading and dissolving patterned tension.  These sequences invite surrender and integration.</p>
+        <p>For deep restoration, limbic unloading and dissolving patterned tension. These sequences invite surrender and
+          integration.</p>
         <h3>The Release Pattern 💧</h3>
         <ul>
           <li>Downward‑left hold (20–40 sec)</li>
@@ -423,9 +450,23 @@
         </ul>
       </div>
     </details>
+    <footer class="app-footer">
+      <nav class="footer-nav">
+        <a href="random.html">🔀 Random</a>
+        <a href="#" id="footer-stats">📊 Stats</a>
+        <a href="index.html">☰ Home</a>
+      </nav>
+    </footer>
   </div>
   <!-- Audio cue for end of each gaze/phase -->
   <audio id="audio-ding" src="assets/audio/ding.mp3" preload="auto"></audio>
+
+  <script src="js/time-tracker.js"></script>
+  <script src="js/time-stats-ui.js"></script>
+  <script src="js/lazy-loader.js"></script>
+  <script src="js/menu.js"></script>
   <script src="js/eyes_app.js" defer></script>
+  <script src="js/completion-prompt.js"></script>
 </body>
+
 </html>
