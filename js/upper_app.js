@@ -172,6 +172,9 @@ let currentRound = 1;
 let currentPhase = "idle";
 let secondsRemaining = 0;
 
+// Lazy loading
+let lazyLoader = null;
+
 // Audio settings
 let audioEnabled = true;
 let audioEl;
@@ -285,10 +288,11 @@ function handleCustomSequence() {
     const d = document.createElement("div");
     d.className = "preview-thumb";
     const img = document.createElement("img");
-    img.src = IMAGE_BASE_PATH + m.file;
+    img.dataset.src = IMAGE_BASE_PATH + m.file;
     img.alt = movementLabelFromFile("CUSTOM", m.file);
     d.appendChild(img);
     strip.appendChild(d);
+    if (lazyLoader) lazyLoader.observe(img);
   });
   switchScreen("screen-prefs");
 }
@@ -319,10 +323,11 @@ function renderRoutineCards() {
       const t = document.createElement("div");
       t.className = "thumb";
       const img = document.createElement("img");
-      img.src = IMAGE_BASE_PATH + m.file;
+      img.dataset.src = IMAGE_BASE_PATH + m.file;
       img.alt = movementLabelFromFile(key, m.file);
       t.appendChild(img);
       strip.appendChild(t);
+      if (lazyLoader) lazyLoader.observe(img);
     });
     card.appendChild(strip);
     card.addEventListener("click", () => {
@@ -370,10 +375,11 @@ function handleRoutineSelected(key) {
     const d = document.createElement("div");
     d.className = "preview-thumb";
     const img = document.createElement("img");
-    img.src = IMAGE_BASE_PATH + m.file;
+    img.dataset.src = IMAGE_BASE_PATH + m.file;
     img.alt = movementLabelFromFile(key, m.file);
     d.appendChild(img);
     strip.appendChild(d);
+    if (lazyLoader) lazyLoader.observe(img);
   });
   switchScreen("screen-prefs");
 }
@@ -386,6 +392,10 @@ function startRoutine() {
   isRunning = true;
   qs("#btn-play-pause").textContent = "Pause";
   qs("#status-message").textContent = "";
+  // Start time tracking
+  if (window.timeTracker) {
+    window.timeTracker.startSession('Upper Body Innervation', selectedRoutineKey);
+  }
   startPhase("move");
 }
 
@@ -420,6 +430,15 @@ function startPhase(phase) {
 }
 
 function handlePhaseComplete() {
+  // Record the movement that just completed
+  if (currentPhase === "move" && window.timeTracker) {
+    const move = selectedRoutineMovements[currentMovementIndex];
+    if (move) {
+      const label = movementLabelFromFile(selectedRoutineKey, move.file);
+      window.timeTracker.recordMovement(label, prefs.secondsPerMovement);
+    }
+  }
+
   if (currentPhase === "move" && prefs.restBetween > 0) {
     playDing();
     startPhase("rest");
@@ -448,6 +467,16 @@ function finishRoutine() {
   qs("#btn-play-pause").textContent = "Restart";
   qs("#phase-label").textContent = "Complete";
   qs("#status-message").textContent = "Routine complete.";
+  // Stop time tracking and show summary
+  if (window.timeTracker) {
+    window.timeTracker.stopSession();
+    const sessionTime = window.timeTracker.getLastSessionDuration();
+    if (window.TimeStatsUI) {
+      setTimeout(() => {
+        TimeStatsUI.showQuickSummary('Upper Body Innervation', sessionTime);
+      }, 500);
+    }
+  }
 }
 
 function updateMovementUI() {
@@ -460,6 +489,7 @@ function updateMovementUI() {
   imgEl.alt = label;
   qs("#movement-count").textContent = `Movement ${currentMovementIndex + 1} of ${selectedRoutineMovements.length}`;
   qs("#round-count").textContent = `Round ${currentRound} of ${prefs.rounds}`;
+  // Time tracking happens when movement completes, not here
   updatePhaseLabel();
   // Reset progress bar and animate for next movement
   const bar = qs("#prog");
@@ -523,6 +553,9 @@ function initBackButtons() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // Initialize lazy image loader
+  lazyLoader = new LazyImageLoader({ rootMargin: '100px' });
+
   renderRoutineCards();
   initBackButtons();
   const randomBtn = qs("#upper-btn-random");
@@ -578,5 +611,13 @@ document.addEventListener("DOMContentLoaded", () => {
     if (ROUTINES[upperKey]) {
       handleRoutineSelected(upperKey);
     }
+  }
+
+  // Stats button handler
+  const statsBtn = document.getElementById('stats-btn');
+  if (statsBtn && window.timeStatsUI) {
+    statsBtn.addEventListener('click', () => {
+      window.timeStatsUI.open();
+    });
   }
 });
