@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tree of Life · Innervation Atlas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Use the same font as other pages -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/legs_style.css">
+  <!-- Favicon for site icon -->
+  <link rel="icon" type="image/png" href="assets/logo/tolnrilogo.png">
+  <!-- iPhone / iPad home screen icon -->
+<link rel="apple-touch-icon" sizes="180x180" href="assets/logo/tolnrilogo.png">
+</head>
+<body>
+  <div class="app-frame">
+    <header class="brand-header">
+  <div class="brand-mark">
+    <!-- LEFT SIDE: logo + presented by -->
+    <div class="brand-left">
+      <a href="index.html" class="brand-logo-link">
+        <img
+          src="assets/logo/tolnrilogo.png"
+          alt="Tree of Life logo"
+          class="brand-logo-image"
+        >
+      </a>
+      <div class="brand-presenter">
+        <span class="presented-label">presented by:</span>
+        <span class="presented-name">Brian O'Kelly</span>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: title + subtitle -->
+    <div class="brand-text">
+      <div class="brand-title">TREE OF LIFE</div>
+      <div class="brand-subtitle">Neurological Research Institute</div>
+    </div>
+
+    <!-- MENU ICON -->
+    <a href="index.html" class="home-link" title="Menu">
+      <img src="assets/neuroocular/icons/menuicon.png" alt="Menu" class="menu-icon">
+    </a>
+  </div>
+</header>
+
+    <main class="app-main">
+      <section class="screen screen-active">
+        <h1 class="screen-title">Innervation Atlas</h1>
+
+        <div class="routine-list">
+          <!-- Neuro-Ocular card -->
+          <div class="routine-card" data-href="eyes.html">
+            <div class="routine-header-row">
+              <div class="routine-name">Neuro-Ocular Activation</div>
+            </div>
+            <div class="icon-strip ocular-icons">
+              <a href="eyes.html?routine=GROUND" class="icon-thumb" title="Grounding sequence">
+                <img src="assets/neuroocular/icons/9-grounding.svg" alt="Ground Icon">
+              </a>
+              <a href="eyes.html?routine=RESTORE" class="icon-thumb" title="Restoring sequence">
+                <img src="assets/neuroocular/icons/9-restore.svg" alt="Restore Icon">
+              </a>
+              <a href="eyes.html?routine=ALERT" class="icon-thumb" title="Alert sequence">
+                <img src="assets/neuroocular/icons/9-alert.svg" alt="Alert Icon">
+              </a>
+              <a href="eyes.html?routine=FULL" class="icon-thumb" title="All 9 points">
+                <img src="assets/neuroocular/icons/all9.svg" alt="All 9 Icon">
+              </a>
+              <a href="eyes.html?routine=CORE" class="icon-thumb" title="Main 4 points">
+                <img src="assets/neuroocular/icons/9main4.svg" alt="Main 4 Icon">
+              </a>
+              <a href="eyes.html?routine=DIAGONAL" class="icon-thumb" title="Supplemental 4 points">
+                <img src="assets/neuroocular/icons/9supp4.svg" alt="Supplemental 4 Icon">
+              </a>
+            </div>
+          </div>
+
+          <!-- Breathwork Toolkit -->
+          <div class="routine-card" data-href="breathwork.html">
+            <div class="routine-header-row">
+              <div class="routine-name">Breathwork Toolkit</div>
+            </div>
+            <div class="thumb-strip">
+              <div class="thumb"><img src="assets/breath/solar.png" alt="Solar pattern"></div>
+              <div class="thumb"><img src="assets/breath/lunar.png" alt="Lunar pattern"></div>
+              <div class="thumb"><img src="assets/breath/alternate.png" alt="Alternate pattern"></div>
+              <div class="thumb"><img src="assets/breath/cyclical.png" alt="Cyclical pattern"></div>
+            </div>
+          </div>
+
+          <!-- Lower Body Innervation -->
+          <div class="routine-card" data-href="lower.html">
+            <div class="routine-header-row">
+              <div class="routine-name">Lower Body Innervation</div>
+            </div>
+            <div class="icon-strip lower-icons">
+              <!-- JS will inject four icons using first movement image from each routine -->
+            </div>
+          </div>
+
+          <!-- Upper Body Innervation -->
+          <div class="routine-card" data-href="upper.html">
+            <div class="routine-header-row">
+              <div class="routine-name">Upper Body Innervation</div>
+            </div>
+            <div class="icon-strip upper-icons">
+              <!-- JS will inject up to 6 random routine icons -->
+            </div>
+          </div>
+
+          <!-- Head Innervation -->
+          <div class="routine-card" data-href="head.html">
+            <div class="routine-header-row">
+              <div class="routine-name">Head Innervation</div>
+            </div>
+            <div class="icon-strip head-icons">
+              <!-- JS will inject up to 6 random routine icons -->
+            </div>
+          </div>
+
+          <!-- Mudras -->
+          <div class="routine-card" data-href="mudras.html">
+            <div class="routine-header-row">
+              <div class="routine-name">Mudras</div>
+            </div>
+            <div class="thumb-strip mudras-strip">
+              <!-- JS will inject 3 random mudra thumbnails -->
+            </div>
+          </div>
+
+          <!-- Other: About / FAQ / Contact -->
+          <div class="routine-card about-card" data-href="other.html">
+            <div class="routine-header-row">
+              <div class="routine-name">About / FAQ / Contact</div>
+              <div class="routine-more">Tap for details ⌄</div>
+            </div>
+          </div>
+
+          <!-- Presenter info + Back to top -->
+          <div class="presented-row">
+            <div class="presented-block">
+              <div>Presented By: <strong>Brian O'Kelly</strong></div>
+              <div>Tree of Life: Neurological Research Institute</div>
+              <div>📱 <a href="tel:18174876050">(817) 487-6050</a></div>
+              <div>✉️ <a href="mailto:TreeOfLifeNRI@yahoo.com">TreeOfLifeNRI@yahoo.com</a></div>
+            </div>
+            <div class="backtop-wrap">
+              <button
+                class="btn ghost-btn backtop-btn"
+                type="button"
+                onclick="scrollToTop()"
+              >
+                ↑ Back to top
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function scrollToTop() {
+      const screen = document.querySelector('.screen-active');
+      if (screen) {
+        screen.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Make entire card clickable (except when clicking inside an inner link).
+      document.querySelectorAll('.routine-card[data-href]').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.closest('a')) return; // let icon links work normally
+          const href = card.getAttribute('data-href');
+          if (href) {
+            window.location.href = href;
+          }
+        });
+      });
+
+      function shuffleAndTake(list, maxCount) {
+        const copy = [...list];
+        for (let i = copy.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [copy[i], copy[j]] = [copy[j], copy[i]];
+        }
+        return copy.slice(0, Math.min(maxCount, copy.length));
+      }
+
+      // 1) MUDRAS: show 3 random mudra icons on the Mudras card
+      const mudraStrip = document.querySelector('.mudras-strip');
+      if (mudraStrip) {
+        const TOTAL_MUDRAS = 45; // adjust if you have fewer
+        const chosen = [];
+        while (chosen.length < 3 && chosen.length < TOTAL_MUDRAS) {
+          const n = Math.floor(Math.random() * TOTAL_MUDRAS) + 1;
+          if (!chosen.includes(n)) chosen.push(n);
+        }
+        mudraStrip.innerHTML = '';
+        chosen.forEach(i => {
+          const d = document.createElement('div');
+          d.className = 'thumb';
+          const img = document.createElement('img');
+          img.src = 'assets/mudras/' + i + '.svg';
+          img.alt = 'Mudra ' + i;
+          d.appendChild(img);
+          mudraStrip.appendChild(d);
+        });
+      }
+
+      // 2) LOWER BODY: four fixed icons using the first movement SVG from each routine
+      const lowerStrip = document.querySelector('.lower-icons');
+      if (lowerStrip) {
+        const lowerRoutines = [
+          { key: 'FEET',      file: '1_FEET_MIDCROSSRIGHT_D_IMG.svg',            alt: 'Feet' },
+          { key: 'GROUNDING', file: '1_GROUNDING_FORWARD_D_IMG.svg',            alt: 'Grounding' },
+          { key: 'HIPS1',     file: '1_HIPS1_LEFTFRONTIN_D_IMG.svg',            alt: 'Hips I' },
+          { key: 'HIPS2',     file: '1_HIPS2_PLANKOPPOSITELEFTFRONT_D_IMG.svg', alt: 'Hips II' }
+        ];
+        lowerStrip.innerHTML = '';
+        lowerRoutines.forEach(r => {
+          const a = document.createElement('a');
+          a.href = 'lower.html?routine=' + r.key;
+          a.className = 'icon-thumb lower-thumb';
+          const img = document.createElement('img');
+          img.src = 'InnervationSVGs/' + r.file;
+          img.alt = r.alt;
+          a.appendChild(img);
+          lowerStrip.appendChild(a);
+        });
+      }
+
+      // 3) UPPER BODY: random 6 routines using the first movement SVG from each
+      const upperStrip = document.querySelector('.upper-icons');
+      if (upperStrip) {
+        const UPPER_ROUTINES = [
+          { key: 'PALMSTOGETHER',    label: 'Palms Together',   file: '2_CLASPMID_LEFT_D_IMG.svg' },
+          { key: 'PALMIN',           label: 'Palm In',          file: '2_PALMIN_UP_D_IMG.svg' },
+          { key: 'PALMOPEN',         label: 'Palm Open',        file: '2_PALMOPEN_UP_D_IMG.svg' },
+          { key: 'PALMOUT',          label: 'Palm Out',         file: '2_PALMOUT_DOWN_D_IMG.svg' },
+          { key: 'PALMCLOSED',       label: 'Palm Closed',      file: '2_PALMCLOSED_UP_D_IMG.svg' },
+          { key: 'HEARTOPEN',        label: 'Heart Open',       file: '2_HEARTOPEN_RIGHT_D_IMG.svg' },
+          { key: 'HEARTPROTECTED',   label: 'Heart Protected',  file: '2_HEARTPROTECTED_RIGHT_D_IMG.svg' },
+          { key: 'SCAPULA',          label: 'Scapula',          file: '2_SCAPULA_RIGHT_D_IMG.svg' },
+          { key: 'CROSSOPENBACKWARD',label: 'Cross Back',       file: '2_CROSSPALM_BACKWARD_0_IMG.svg' },
+          { key: 'CROSSOPENDOWN',    label: 'Cross Down',       file: '2_CROSSPALM_DOWN_0_IMG.svg' },
+          { key: 'CROSSOPENFORWARD', label: 'Cross Forward',    file: '2_CROSSPALM_FORWARD_0_IMG.svg' },
+          { key: 'CROSSOPENREVERSE', label: 'Cross Reverse',    file: '2_CROSSPALM_REVERSE_0_IMG.svg' },
+          { key: 'CROSSOPENUP',      label: 'Cross Up',         file: '2_CROSSPALM_UP_0_IMG.svg' },
+          { key: 'CROSSCLOSEDBACKWARD', label: 'Fists Back',    file: '2_CROSSFIST_BACKWARD_0_IMG.svg' },
+          { key: 'CROSSCLOSEDDOWN',     label: 'Fists Down',    file: '2_CROSSFIST_DOWN_0_IMG.svg' },
+          { key: 'CROSSCLOSEDFORWARD',  label: 'Fists Forward', file: '2_CROSSFIST_FORWARD_0_IMG.svg' },
+          { key: 'CROSSCLOSEDREVERSE',  label: 'Fists Reverse', file: '2_CROSSFIST_REVERSE_0_IMG.svg' },
+          { key: 'CROSSCLOSEDUP',       label: 'Fists Up',      file: '2_CROSSFIST_UP_0_IMG.svg' }
+        ];
+
+        upperStrip.innerHTML = '';
+        shuffleAndTake(UPPER_ROUTINES, 6).forEach(r => {
+          const a = document.createElement('a');
+          a.href = 'upper.html?routine=' + r.key;
+          a.className = 'icon-thumb';
+          const img = document.createElement('img');
+          img.src = 'InnervationSVGs/' + r.file;
+          img.alt = r.label;
+          a.appendChild(img);
+          upperStrip.appendChild(a);
+        });
+      }
+
+      // 4) HEAD: random 6 routines using the first movement SVG from each
+      const headStrip = document.querySelector('.head-icons');
+      if (headStrip) {
+        const HEAD_ROUTINES = [
+          { key: 'CHINBOTTOM', label: 'Chin Bottom', file: '3_CHINBOTTOM_0_D_IMG.svg' },
+          { key: 'CHINTOP',    label: 'Chin Top',    file: '3_CHINTOP_0_D_IMG.svg' },
+          { key: 'LION',       label: 'Lion',        file: '3_LION_0_D_IMG.svg' },
+          { key: 'LIONLEFT',   label: 'Lion Left',   file: '3_LIONLEFT_0_D_IMG.svg' },
+          { key: 'LIONRIGHT',  label: 'Lion Right',  file: '3_LIONRIGHT_0_D_IMG.svg' },
+          { key: 'NOSE',       label: 'Nose',        file: '3_OPENNOSE_OPENMOUTH_D_IMG.svg' },
+          { key: 'PULL',       label: 'Pulls',       file: '3_PULLTOP_R_D_IMG.svg' }
+        ];
+
+        headStrip.innerHTML = '';
+        shuffleAndTake(HEAD_ROUTINES, 6).forEach(r => {
+          const a = document.createElement('a');
+          a.href = 'head.html?routine=' + r.key;
+          a.className = 'icon-thumb';
+          const img = document.createElement('img');
+          img.src = 'InnervationSVGs/' + r.file;
+          img.alt = r.label;
+          a.appendChild(img);
+          headStrip.appendChild(a);
+        });
+      }
+    });
+  </script>
+</body>
+</html>

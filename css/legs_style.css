@@ -1,0 +1,696 @@
+/* Shared style sheet for the Innervation Atlas pages. */
+
+:root {
+  --gold: #C2873F;
+  --emerald: #3A915C;
+  --obsidian: #0F0F0F;
+  --starlight: #4C9AC5;
+  --cream: #F6E3B4;
+  --indigo: #1D1A3A;
+
+  --shadow-soft: 0 18px 40px rgba(0,0,0,0.65);
+  --shadow-light: 0 8px 18px rgba(0,0,0,0.55);
+
+  --radius-lg: 26px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+
+  --transition-fast: 160ms ease-out;
+  --transition-med: 220ms ease-out;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Space Grotesk", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: radial-gradient(circle at top, #1D1A3A 0, #050508 55%, #020203 100%);
+  color: var(--cream);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.app-frame {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+/* group logo + "presented by" on the left */
+.brand-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* make the whole header spread nicely */
+.brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* keep logo clickable */
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+}
+
+/* "presented by" block – already has opacity in .presented-label */
+.brand-presenter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/* right side stays right-aligned */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  flex: 1;
+  margin-left: 16px;
+  text-align: right;
+}
+.brand-header {
+  flex: 0 0 auto;
+  background: var(--indigo);
+  color: var(--cream);
+  padding: 10px 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+.brand-logo-link {
+  display: flex;
+  align-items: center;
+}
+.brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.brand-logo-image {
+  height: 56px;
+  width: 56px;
+  border-radius: 999px;
+  margin-right: 12px;
+  object-fit: contain;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  flex: 1;
+  margin-left: 8px;
+  text-align: right;
+}
+/* "presented by: Brian O'Kelly" block in header */
+.brand-presenter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 3px;
+}
+
+.presented-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: lowercase;
+  opacity: 0.35;            /* ~35% opacity like your mock */
+}
+
+.presented-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gold);       /* C2873F */
+}
+.brand-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+
+.brand-subtitle {
+  font-size: 0.9rem;
+  color: rgba(245,230,205,0.8);
+}
+
+/* Top-right menu button (hamburger icon) on all Innervation pages */
+.home-link {
+  margin-left: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  background: var(--indigo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.home-link:hover {
+  box-shadow: var(--shadow-light);
+}
+
+.menu-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* MAIN SCREEN */
+
+.app-main {
+  flex: 1 1 auto;
+  position: relative;
+  overflow: hidden;
+  padding: 10px 10px 14px;
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 14px 16px 16px;
+  background: radial-gradient(circle at top, rgba(76,154,197,0.13), rgba(3,4,7,0.96));
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: var(--shadow-soft);
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity var(--transition-med), transform var(--transition-med);
+}
+
+.screen-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.screen-title {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.screen-tagline {
+  margin: 6px 0 14px;
+  font-size: 0.78rem;
+  color: rgba(243,229,200,0.85);
+}
+
+/* HOME ROUTINE CARDS */
+
+.routine-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.routine-card {
+  border-radius: var(--radius-md);
+  padding: 10px 10px 12px;
+  background: radial-gradient(circle at top, rgba(246,227,180,0.16), rgba(16,12,6,0.95));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: var(--shadow-light);
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  color: inherit;
+  text-decoration: none;
+}
+
+.routine-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.8);
+  border-color: rgba(242,227,180,0.8);
+}
+
+.routine-header-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.routine-name {
+  font-size: 0.9rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* Remove the little cream pill on the home screen */
+.routine-count {
+  display: none;
+}
+
+/* STRIPS & THUMBS */
+
+.thumb-strip {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-top: 4px;
+  justify-content: center;
+}
+
+.thumb-strip::-webkit-scrollbar {
+  display: none;
+}
+
+/* Landing thumbnails (breathwork, mudras) – make them big */
+.thumb {
+  flex: 0 0 80px;
+  height: 80px;
+  border-radius: 14px;
+  background: var(--indigo);
+  overflow: hidden;
+  border: 1px solid rgba(10,20,30,0.8);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BUTTONS */
+
+.btn {
+  border-radius: 999px;
+  border: none;
+  padding: 9px 14px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: transform 120ms ease-out, box-shadow 160ms ease-out, background var(--transition-fast), color var(--transition-fast);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.7);
+}
+
+.random-btn {
+  margin: 14px auto 0;
+  display: flex;
+  background: var(--cream);
+  color: #1c1710;
+  box-shadow: var(--shadow-light);
+}
+
+.random-icon {
+  font-size: 0.95rem;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, var(--emerald), var(--gold));
+  color: #fff;
+  box-shadow: var(--shadow-light);
+}
+
+.ghost-btn {
+  background: transparent;
+  color: rgba(246,227,180,0.88);
+  border: 1px solid rgba(246,227,180,0.6);
+}
+
+.full-width {
+  width: 100%;
+  margin-top: 14px;
+}
+
+.back-btn {
+  border: none;
+  background: transparent;
+  color: rgba(246,227,180,0.86);
+  font-size: 0.8rem;
+  margin: -4px 0 2px;
+  padding: 4px 2px;
+  cursor: pointer;
+}
+
+/* PREVIEW CARD (USED ON PLAYER PAGES) */
+
+.routine-preview-card {
+  margin-top: 4px;
+  border-radius: var(--radius-md);
+  padding: 8px 10px 10px;
+  background: radial-gradient(circle at top, rgba(246,227,180,0.18), rgba(18,14,8,0.96));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.preview-label {
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.preview-strip {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.preview-strip::-webkit-scrollbar {
+  display: none;
+}
+
+/* SMALL PREVIEW THUMBS (NON-ACTIVE MOVEMENTS) – NEVER GREEN NOW */
+.preview-thumb {
+  flex: 0 0 64px;
+  height: 64px;
+  border-radius: 14px;
+  background: var(--indigo);
+  border: 1px solid rgba(40,60,90,0.9);
+  overflow: hidden;
+}
+
+.preview-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* PILL TOGGLE */
+
+.pill-toggle {
+  position: relative;
+  width: 60px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: radial-gradient(circle at left, rgba(65, 90, 110, 0.6), rgba(6, 7, 10, 0.98));
+  display: inline-flex;
+  align-items: center;
+  padding: 2px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.pill-knob {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: radial-gradient(circle, #f6e3b4, #c2873f);
+  box-shadow: 0 0 10px rgba(242, 227, 180, 0.8);
+  transform: translateX(0);
+  transition: transform 140ms ease-out;
+}
+
+.pill-label {
+  flex: 1;
+  font-size: 0.65rem;
+  text-align: center;
+  color: rgba(230, 219, 192, 0.8);
+}
+
+.pill-toggle[data-on="1"] {
+  background: radial-gradient(circle at right, rgba(58, 145, 92, 0.9), rgba(6, 12, 10, 0.98));
+}
+.pill-toggle[data-on="1"] .pill-knob {
+  transform: translateX(34px);
+}
+
+/* PREFS FIELDS */
+
+.prefs-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(245,230,205,0.8);
+}
+
+.field input[type="number"] {
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.16);
+  padding: 7px 11px;
+  background: rgba(5,8,10,0.96);
+  color: var(--cream);
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+/* PLAYER STYLES */
+
+.current-movement-card {
+  margin-top: 12px;
+  border-radius: var(--radius-md);
+  padding: 8px 10px 10px;
+  background: radial-gradient(circle at top, rgba(64,128,176,0.26), rgba(8,10,18,0.96));
+  border: 1px solid rgba(160,190,220,0.55);
+}
+
+.movement-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.movement-image-frame {
+  width: 100%;
+  border-radius: 18px;
+  background: radial-gradient(circle at top, rgba(10,18,26,1), rgba(3,4,7,1));
+  border: 1px solid rgba(126,156,188,0.8);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movement-image-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.movement-meta {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  font-size: 0.75rem;
+  color: rgba(238,225,199,0.9);
+}
+
+.movement-count,
+.round-count,
+.phase-label {
+  white-space: nowrap;
+}
+
+.progress-area {
+  margin-top: 14px;
+}
+
+.progress-wrap {
+  width: 100%;
+  height: 22px;
+  background: var(--cream);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(110,90,60,0.9), 0 6px 14px rgba(0,0,0,0.7);
+}
+
+.progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--emerald);
+  border-radius: inherit;
+  transition: width 2.2s linear;
+}
+
+.player-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.status-message {
+  margin-top: 10px;
+  font-size: 0.78rem;
+  color: rgba(241,228,203,0.9);
+}
+
+/* ICON STRIPS ON HOME */
+
+.icon-strip {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Base style for an icon thumbnail (neuro-ocular, lower, upper, head, etc.) */
+.icon-thumb {
+  flex: 0 0 80px;
+  height: 80px;
+  border-radius: 18px;
+  background: var(--indigo);
+  border: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--cream);
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.icon-thumb img {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+}
+
+/* Lower body icons on the home page (Feet, Ground, Hips I/II) */
+.lower-icons .lower-thumb {
+  flex: 0 0 80px;
+  height: 80px;
+  border-radius: 18px;
+  padding: 4px;
+  background: var(--indigo);
+  color: var(--cream);
+  border: 1px solid rgba(255,255,255,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.lower-icons .lower-thumb img {
+  width: 86%;
+  height: 86%;
+  object-fit: contain;
+}
+
+.lower-icons .lower-thumb:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-light);
+}
+
+/* ABOUT CARD + PRESENTER ROW */
+
+.routine-card.about-card {
+  padding: 8px 10px;
+}
+
+.routine-card.about-card .routine-header-row {
+  justify-content: flex-start;
+}
+
+.routine-card.about-card .routine-name {
+  margin-left: 0;
+  text-align: left;
+}
+
+/* The small "More" hint on the About card */
+.routine-more {
+  font-size: 0.72rem;
+  margin-left: 8px;
+  color: rgba(243,229,200,0.85);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Presenter row under About card */
+.presented-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 4px 0;
+}
+
+.presented-block {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.presented-block a {
+  color: var(--cream);
+  text-decoration: underline;
+}
+
+.backtop-wrap {
+  flex-shrink: 0;
+}
+
+.backtop-btn {
+  font-size: 0.75rem;
+  padding: 7px 12px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 420px) {
+  .presented-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .backtop-wrap {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 380px) {
+  .screen {
+    padding-inline: 12px;
+  }
+}
